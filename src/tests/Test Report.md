@@ -221,18 +221,6 @@ This suite focuses on the Home component’s waste pickup form, testing UI rende
 
 ---
 
-### **Overall Insights**  
-✅ **Shared Strengths:**  
-- All suites use `@testing-library/react` for consistent, user-centric testing.  
-- Cover core functionality (rendering, validation, submission).  
-- Isolate components effectively with mocks where needed.  
-
-🔧 **Common Improvement Opportunities:**  
-1. **Enhanced Edge Cases:** Test network errors, rate limiting, or malformed inputs.  
-2. **Integration Testing:** Verify interactions between components (e.g., login → redirect → home).  
-3. **Accessibility Audits:** Add tests for keyboard navigation, ARIA labels, and screen readers.  
-4. **Performance Checks:** Measure load times for forms with large datasets.  
-
 ### **Final Thoughts**  
 These test suites provide a solid foundation for reliability but could evolve to include more real-world scenarios (e.g., API failures, concurrency). Future efforts might focus on:  
 - **End-to-end (E2E) tests** (e.g., Cypress) to validate full user journeys.  

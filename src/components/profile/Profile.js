@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CommunityFeed.css';
+import './Profile.css';
 
 const LS_POSTS = 'communityPosts';
 const LS_LIKES = 'communityLikes';

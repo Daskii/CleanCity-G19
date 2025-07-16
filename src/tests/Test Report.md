@@ -221,12 +221,6 @@ This suite focuses on the Home component’s waste pickup form, testing UI rende
 
 ---
 
-### **Final Thoughts**  
-These test suites provide a solid foundation for reliability but could evolve to include more real-world scenarios (e.g., API failures, concurrency). Future efforts might focus on:  
-- **End-to-end (E2E) tests** (e.g., Cypress) to validate full user journeys.  
-- **Visual regression tests** to catch UI inconsistencies.  
-
-
 # **Challenges Encountered**
 
 * Limited Direct Access to Application: Reliance on code analysis and existing documentation due to sandboxed environment limitations for interactive testing.  

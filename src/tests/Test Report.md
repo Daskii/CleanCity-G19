@@ -150,9 +150,9 @@ A combination of manual and exploratory testing will be used, with an emphasis o
 While key areas are covered, more detailed information about the specific test cases can be found in the provided link: [https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/test-cases.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/test-cases.md)
 
 **6\. Test Execution Summary**  
-[https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Registration test summary.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Registration test summary.md)
-[https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Login test test summary.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Login test test summary.md)
-[https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Home test summary.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Home test summary.md)
+[https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Registration test summary.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Registration test summary.md)  
+[https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Login test test summary.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Login test test summary.md)  
+[https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Home test summary.md](https://github.com/Daskii/CleanCity-G19/blob/main/src/tests/Home test summary.md)  
 
 
 **7\. Bug Report**

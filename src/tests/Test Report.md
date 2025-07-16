@@ -151,7 +151,7 @@ While key areas are covered, more detailed information about the specific test c
 
 **6\. Test Execution Summary**
 
-88888888888888
+src/tests/Registration test summary.md
 
 **7\. Bug Report**
 

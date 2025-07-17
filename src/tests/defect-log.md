@@ -1,5 +1,5 @@
-🐛 BUG_001: Weak Password Requirements
-Description :
+🐛**BUG_001: Weak Password Requirements**
+**Description :**
 Weak password requirements allow users to register with insecure passwords (e.g., short length, no special characters).
 
 Priority :
@@ -11,8 +11,8 @@ Open
 Found On :
 Home / Registration Page
 
-🐛 BUG_002: Scheduled Pickups Not Displayed on Dashboard
-Description :
+🐛**BUG_002: Scheduled Pickups Not Displayed on Dashboard**
+**Description :**
 The Dashboard does not show scheduled pickups immediately after submission. Users must manually refresh or re-login to view their requests.
 
 Priority :
@@ -24,8 +24,8 @@ Open
 Found On :
 Dashboard
 
-🐛 BUG_003: Name Validation Too Lenient
-Description :
+🐛 **BUG_003: Name Validation Too Lenient**
+**Description :**
 Registration form accepts names with only 2 characters (e.g., "Al"), which is too short for real-world use.
 
 Priority :
@@ -37,8 +37,8 @@ Open
 Found On :
 Registration Form
 
-🐛 BUG_004: Allows Invalid Characters in Input Fields
-Description :
+🐛 **BUG_004: Allows Invalid Characters in Input Fields**
+**Description :**
 Input fields accept invalid characters that should be blocked (e.g., special characters in numeric fields, invalid dates).
 
 Priority :
@@ -50,8 +50,8 @@ Open
 Found On :
 Registration Form
 
-🐛 BUG_005: Insecure Direct Object Reference
-Description :
+🐛 **BUG_005: Insecure Direct Object Reference**
+**Description :**
 Regular users can access the Admin Panel by typing the URL directly (/#admin) and view or modify other users' pickup requests.
 
 Priority :
@@ -63,8 +63,8 @@ Open
 Found On :
 Admin Panel
 
-🐛 BUG_006: No Warning Message If User Already Exists
-Description :
+🐛 **BUG_006: No Warning Message If User Already Exists**
+**Description :**
 The system does not show a warning when a user tries to register with an already used email or name.
 
 Priority :
@@ -76,8 +76,8 @@ Open
 Found On :
 Registration
 
-🐛 BUG_007: No Waste Pickup Request in Profile
-Description :
+🐛 **BUG_007: No Waste Pickup Request in Profile**
+**Description :**
 User profile does not display any pickup request history, making it difficult to track past or upcoming pickups.
 
 Priority :
@@ -89,8 +89,8 @@ Open
 Found On :
 Schedule Pickup
 
-🐛 BUG_008: Registration Feedback Missing & No Validation for Duplicates
-Description :
+🐛 **BUG_008: Registration Feedback Missing & No Validation for Duplicates**
+**Description :**
 
 No confirmation message after successful registration
 No validation to prevent duplicate email or name submission
@@ -103,8 +103,8 @@ Open
 Found On :
 Register Page
 
-🐛 BUG_009: Missing Confirm Password Field
-Description :
+🐛 **BUG_009: Missing Confirm Password Field**
+**Description :**
 Registration form does not have a confirm password field, allowing mismatched passwords without warning.
 
 Priority :
@@ -116,8 +116,8 @@ Open
 Found On :
 Register Page
 
-🐛 BUG_010: Comments Not Visible in User’s Profile
-Description :
+🐛 **BUG_010: Comments Not Visible in User’s Profile**
+**Description :**
 Feedback comments or request notes are not visible in the user's profile or request history.
 
 Priority :
@@ -129,8 +129,8 @@ Open
 Found On :
 Profile
 
-🐛 BUG_011: No Added Requests or Pickups in Dashboard
-Description :
+🐛 **BUG_011: No Added Requests or Pickups in Dashboard**
+**Description :**
 After scheduling a pickup, the Dashboard does not show the new request unless the page is refreshed.
 
 Priority :
@@ -142,8 +142,8 @@ Open
 Found On :
 Dashboard
 
-🐛 BUG_012: Invalid Password in User Registration
-Description :
+🐛 **BUG_012: Invalid Password in User Registration**
+**Description :**
 Registration form accepts passwords shorter than 8 characters and with no special characters.
 
 Priority :
@@ -155,8 +155,8 @@ Open
 Found On :
 Register Page
 
-🐛 BUG_013: Schedule a Pickup in a Previous Date
-Description :
+🐛 **BUG_013: Schedule a Pickup in a Previous Date**
+**Description :**
 The system allows users to schedule pickups in the past, which is not valid for a waste management system.
 
 Priority :
@@ -168,8 +168,8 @@ Open
 Found On :
 Schedule Pickup
 
-🐛 BUG_014: Multiple Pickups on the Same Date
-Description :
+🐛 **BUG_014: Multiple Pickups on the Same Date**
+**Description :**
 Users can schedule multiple pickups on the same date, which violates system rules.
 
 Priority :
@@ -181,8 +181,8 @@ Planned
 Found On :
 Schedule Pickup
 
-🐛 BUG_015: No Pickup Request History
-Description :
+🐛 **BUG_015: No Pickup Request History**
+**Description :**
 The system does not show a history of completed or past pickup requests in the Dashboard.
 
 Priority :
@@ -194,8 +194,8 @@ Open
 Found On :
 Dashboard
 
-🐛 BUG_016: Missing Labels in Profile Editing
-Description :
+🐛 **BUG_016: Missing Labels in Profile Editing**
+**Description :**
 Some fields in the profile editing section lack labels or descriptions, leading to confusion about what to enter.
 
 Priority :
@@ -207,8 +207,8 @@ Open
 Found On :
 Profile
 
-🐛 BUG_017: Unable to Change Profile Photo
-Description :
+🐛 **BUG_017: Unable to Change Profile Photo**
+**Description :**
 There is no option or form field for users to update or change their profile picture.
 
 Priority :
@@ -220,8 +220,8 @@ Open
 Found On :
 Profile
 
-🐛 BUG_019 / BUG_020: No FAQ Section / No Contact for Support
-Description :
+🐛 **BUG_019 / BUG_020: No FAQ Section / No Contact for Support**
+**Description :**
 The system lacks a FAQ section and contact information for user support or feedback.
 
 Priority :

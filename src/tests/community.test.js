@@ -1,61 +1,82 @@
-import { test, expect } from '@playwright/test';
+// src/tests/community.test.js
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import CommunityFeed from '../components/community/CommunityFeed';
+import '@testing-library/jest-dom';
 
-test.describe('Community Feed', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/community');
+beforeEach(() => {
+  localStorage.clear();
+});
+
+describe('CommunityFeed', () => {
+  test('allows user to create a new post', () => {
+    const { container } = render(<CommunityFeed />);
+
+    const textarea = screen.getByPlaceholderText(/share something/i);
+
+    // Select the post button ONLY inside the new post form
+    const postForm = container.querySelector('.community-post-form');
+    const postButton = postForm.querySelector('button[type="submit"]');
+
+    fireEvent.change(textarea, { target: { value: 'Hello, community!' } });
+    fireEvent.click(postButton);
+
+    expect(screen.getByText('Hello, community!')).toBeInTheDocument();
+    expect(textarea).toHaveValue('');
   });
 
-  test('should allow a user to create a new post', async ({ page }) => {
-    const postContent = 'This is a new test post from Playwright.';
-    await page.fill('textarea[placeholder="Share something with the community..."]', postContent);
-    await page.click('button:has-text("Post")');
-    await expect(page.locator(`text=${postContent}`)).toBeVisible();
-    await expect(page.locator('textarea[placeholder="Share something with the community..."]')).toHaveValue('');
+  test('allows user to like and unlike a post', () => {
+    render(<CommunityFeed />);
+
+    // Like buttons have aria-label "Like this post" or "Unlike this post"
+    const likeButtons = screen.getAllByRole('button', { name: /like this post/i });
+    const firstLikeButton = likeButtons[0];
+
+    const initialLikes = parseInt(firstLikeButton.textContent.match(/\d+/)[0]);
+
+    fireEvent.click(firstLikeButton);
+    expect(firstLikeButton).toHaveTextContent(`${initialLikes + 1}`);
+    expect(firstLikeButton.classList.contains('liked')).toBe(true);
+
+    fireEvent.click(firstLikeButton);
+    expect(firstLikeButton).toHaveTextContent(`${initialLikes}`);
+    expect(firstLikeButton.classList.contains('liked')).toBe(false);
   });
 
-  test('should allow a user to like and unlike a post', async ({ page }) => {
-    // Assuming there's at least one post initially
-    const initialLikeButton = page.locator('.community-post-card .like-btn').first();
-    const initialLikesText = await initialLikeButton.textContent();
-    const initialLikes = parseInt(initialLikesText.match(/\d+/)[0]);
-
-    // Like the post
-    await initialLikeButton.click();
-    await expect(initialLikeButton).toHaveTextContent(`${initialLikes + 1}`);
-    await expect(initialLikeButton).toHaveClass(/liked/);
-
-    // Unlike the post
-    await initialLikeButton.click();
-    await expect(initialLikeButton).toHaveTextContent(`${initialLikes}`);
-    await expect(initialLikeButton).not.toHaveClass(/liked/);
+  test('allows user to add a comment to a post', () => {
+    render(<CommunityFeed />);
+  
+    const commentButtons = screen.getAllByRole('button', { name: /show comments/i });
+    fireEvent.click(commentButtons[0]); // open comments for first post
+  
+    const commentForms = screen.getAllByRole('form');
+    const firstCommentForm = commentForms[0];
+  
+    const input = within(firstCommentForm).getByPlaceholderText(/add a comment/i);
+    const commentButton = within(firstCommentForm).getByRole('button', { name: /comment/i });
+  
+    fireEvent.change(input, { target: { value: 'Nice job!' } });
+    fireEvent.click(commentButton);
+  
+    expect(screen.getByText(/nice job!/i)).toBeInTheDocument();
+    expect(input).toHaveValue('');
   });
+  
 
-  test('should allow a user to add a comment to a post', async ({ page }) => {
-    // Assuming there's at least one post initially
-    const commentButton = page.locator('.community-post-card .comment-btn').first();
-    await commentButton.click(); // Open comments section
+  test('toggles comment section visibility', () => {
+    render(<CommunityFeed />);
 
-    const commentText = 'This is a test comment from Playwright.';
-    await page.fill('input[placeholder="Add a comment..."]', commentText);
-    await page.click('form.comment-form button:has-text("Comment")');
-
-    await expect(page.locator(`text=${commentText}`)).toBeVisible();
-    await expect(page.locator('input[placeholder="Add a comment..."]')).toHaveValue('');
-  });
-
-  test('should toggle comment section visibility', async ({ page }) => {
-    const commentButton = page.locator('.community-post-card .comment-btn').first();
-    const commentSection = page.locator('.comments-section').first();
+    const commentButton = screen.getAllByRole('button', { name: /show comments/i })[0];
 
     // Initially hidden
-    await expect(commentSection).toBeHidden();
+    expect(screen.queryByPlaceholderText(/add a comment/i)).not.toBeInTheDocument();
 
-    // Click to show
-    await commentButton.click();
-    await expect(commentSection).toBeVisible();
+    // Show comments
+    fireEvent.click(commentButton);
+    expect(screen.getByPlaceholderText(/add a comment/i)).toBeInTheDocument();
 
-    // Click to hide again
-    await commentButton.click();
-    await expect(commentSection).toBeHidden();
+    // Hide comments
+    fireEvent.click(commentButton);
+    expect(screen.queryByPlaceholderText(/add a comment/i)).not.toBeInTheDocument();
   });
 });

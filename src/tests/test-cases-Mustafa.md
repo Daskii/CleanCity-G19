@@ -1,7 +1,7 @@
-User Registration Test Cases  
+****User Registration Test Cases  ****
 Title:
 TC-01-Verify New User Registration with Valid Data
-Description:
+**Description:**
 Ensure users can register with valid email, password, full name, and optional phone number.
 Preconditions:
 1.	User is not logged in.

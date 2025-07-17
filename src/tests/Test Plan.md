@@ -2,10 +2,7 @@
 
 ## GROUP NAME: ZERO-DAY ZEALOTS
 
-### 📌 PHASE 1 CONTENT
-
 #### GROUP NAME: ZERO-DAY ZEALOTS 
-### PHASE 1 SUBMISSION
 #### Test Plan – Clean City Project
 ---
 ## 1.Group Members 
